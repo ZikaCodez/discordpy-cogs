@@ -14,6 +14,6 @@ async def on_ready():
           except Exception as e:
               print(f"{cog} is failed to load:")
               raise e
-    print(f"Logged in as {bot.user}")
+  print(f"Logged in as {bot.user}")
     
 bot.run(TOKEN)
