@@ -6,13 +6,13 @@ TOKEN = "" # Insert your bot's token here.
 
 @bot.event
 async def on_ready():
-  for cog in os.listdir(r"cogs"): # Loop through each file in your "cogs" directory.
+  for cog in os.listdir("cogs"): # Loop through each file in your "cogs" directory.
       if cog.endswith(".py"):
           try:
-              cog = f"cogs.{cog.replace('.py', '')}"
+              cog = f"cogs.{cog[:-3]}"
               bot.load_extension(cog) # Load the file as an extension.
           except Exception as e:
-              print(f"{cog} is failed to load:")
+              print(f"{cog} failed to load:")
               raise e
   print(f"Logged in as {bot.user}")
     
